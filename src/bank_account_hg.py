@@ -35,9 +35,16 @@ class BankAccount:
 
     # TODO: count many after duration with p percent
     def deposit (self, m, d, c, p=0):
-        m = int(input('Enter the amount to deposit: '))
-        d = int(input('Enter how many days you want to deposit: '))
-        c = str(input('Enter currency of deposit: '))
+        while True:
+            try:
+                m = int(input('Enter the amount to deposit: '))
+                d = int(input('Enter how many days you want to deposit: '))
+                c = input('Enter currency of deposit- AMD, USD, RUB, EUR: ')
+            except ValueError:
+                print("please enter correct input type: ")
+            else:
+                break
+
         p = BankAccount.INTEREST_RATE[c]
 
         current_date = date.today().strftime("%Y-%m-%d")

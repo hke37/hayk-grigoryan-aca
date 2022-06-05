@@ -5,7 +5,7 @@ class Money:
         self.amount = val
 
     def __str__(self):
-        return "{} {}".format(self.amount, self.currency)
+        return "balance: {} {}".format(self.amount, self.currency)
 
     def __add__(self, other):
         x = self.amount
@@ -18,13 +18,15 @@ class Money:
 
     def __sub__(self, other):
         x = self.amount
-        while\
-                x - other.amount >= 0:
+        rate = self.EXCHANGE[other.currency] / self.EXCHANGE[self.currency]
+
+        if x - rate * other.amount >= 0:
             if self.currency == other.currency:
                 x -= other.amount
             else:
-                rate = self.EXCHANGE[other.currency] / self.EXCHANGE[self.currency]
                 x -= (rate * other.amount)
+        else:
+            print("Your balance is not enough for transaction, please fill your balance first.")
         return Money(self.currency, x)
 
 
@@ -48,23 +50,23 @@ class Money:
 
 
 # TEST
-m1 = Money('USD', 200)
-print("m1 =", m1)
-
-m2 = Money('EUR', 100)
-print("m2 =", m2)
-
-# m3 = Money("RUB", 10000)
-
-# m1 + m2
-print("m1 + m2 = ", m1 + m2)
-
-# m1 - m2
-print("m1 - m2 = ", m1 - m2)
-
-n = 15
-print("m1 * n = ", m1 * n)
-print("m1 / n = ", m1 / n)
+# m1 = Money('USD', 200)
+# print("m1 =", m1)
+#
+# m2 = Money('EUR', 150)
+# print("m2 =", m2)
+#
+# # m3 = Money("RUB", 10000)
+#
+# # m1 + m2
+# print("m1 + m2 = ", m1 + m2)
+#
+# # m1 - m2
+# print("m1 - m2 = ", m1 - m2)
+#
+# n = 15
+# print("m1 * n = ", m1 * n)
+# print("m1 / n = ", m1 / n)
 
 
 

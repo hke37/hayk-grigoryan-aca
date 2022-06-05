@@ -12,6 +12,7 @@ class DateError(Exception):
 
 class Date:
     MONTH_DAYS = [0, 31, 28, 31, 30,31,30,31,31,30,31,30,31]
+
     def __init__(self, y, m, d):
         try:
             if y < 0:
@@ -23,15 +24,13 @@ class Date:
         except DateError as err:
             print(err.get_info())
         else:
-            self.__year = y 
-            self.__month = m 
-            self.__day = d 
+            self.__year = y
+            self.__month = m
+            self.__day = d
     
     def __str__(self):
-        return "{}/{}/{}".format(self.__year, self.__month, self.__day)
-        
-    #TODO get functions for all data-members
-    
+        return "{}/{:02d}/{:02d}".format(self.__year, self.__month, self.__day)
+
     def add_year(self, y):
         self.__year += y
         
@@ -67,9 +66,9 @@ class Date:
         return True
 
 
-d = Date(2022, 5, 26)
-print(d)
-d.add_day(230)
-print(d)
+# d = Date(1984, 12, 7)
+# print(d)
+# d.add_day(25)
+# print(d)
 # d.set_month(11)
-#print(d.get_month())
+# print(d.get_month())

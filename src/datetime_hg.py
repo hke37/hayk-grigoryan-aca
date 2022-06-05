@@ -1,5 +1,5 @@
-from date import Date
-from time_ import Time
+from date_hg import Date
+from time_hg import Time
 
 class DateTime:
     def __init__(self, d, t):

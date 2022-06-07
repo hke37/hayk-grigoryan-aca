@@ -3,7 +3,7 @@
 from Person_hg import Customer
 from money_hg import Money
 from date_hg import Date
-# from datetime import date, timedelta
+
 
 
 class BankAccount:
@@ -13,7 +13,6 @@ class BankAccount:
     def __init__(self, p: Customer, a: Customer, m: Money, d: Date) -> None:
         self.__customer = p
         self.__account_number = a   #TODO: generate random 16-len string from digits
-        #self.__account_currency = c
         self.__balance = m
         self.__valid_till = d
         #TODO: add other data members if you need
@@ -34,7 +33,11 @@ class BankAccount:
         return x
 
     # TODO: count many after duration with p percent
-    def deposit (self, m, d, p=0):
+    def deposit (self, m, d, dt, p=1):
+
+        print("start date is :", dt)
+        end_date = dt.add_day(d)
+        print("maturity date is :", dt)
 
         p = BankAccount.INTEREST_RATE[Money.get_currency(m)]
         interest_amount = m * p/100 * d * (1/365)
@@ -43,13 +46,6 @@ class BankAccount:
         deposit_amount = m + net_interest_amount
         print("deposit amount will be: ")
         return deposit_amount
-
-
-        # current_date = date.today().strftime("%Y-%m-%d")
-        # print("current date is: ", current_date)
-        # maturity_date = date.today() + timedelta(days=d)
-        # print("maturity date is: ", maturity_date)
-
 
 
 ##############################
@@ -76,6 +72,7 @@ m3 = Money("RUB", 12000)
 f2 = obj1.fill_balance(m3)
 print(f2)
 
-m5 = Money("USD", 1000)
-d1 = obj1.deposit(m5,130)
+m5 = Money("USD", 1500)
+d5 = Date(2022, 7, 18)
+d1 = obj1.deposit(m5, 150, d5)
 print(d1)

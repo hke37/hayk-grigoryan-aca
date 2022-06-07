@@ -50,6 +50,9 @@ class Date:
 
     def get_month(self):
         return self.__month
+
+    def get_day(self):
+        return self.__day
  
     def set_month(self, m):
         try:

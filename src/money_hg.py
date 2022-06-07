@@ -7,6 +7,10 @@ class Money:
     def __str__(self):
         return "balance: {} {}".format(self.amount, self.currency)
 
+
+    def get_currency(self):
+        return self.currency
+
     def __add__(self, other):
         x = self.amount
         if self.currency == other.currency:

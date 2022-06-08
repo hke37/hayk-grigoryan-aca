@@ -10,7 +10,6 @@ class Person:
         self.gender = g
         self.id_number = idn
 
-
     def __str__(self):
         # print("Person")
         return "{} {} - {}, {}, \nID Number - {}".format(self.first_name, self.last_name, self.age, self.gender, self.id_number)
@@ -24,7 +23,7 @@ class Customer(Person):
 
     def __str__(self):
         # print("Customer")
-        return "{}\n{} \nloyalty years - {}".format(super().__str__(), self.profession, self.loyalty_years)
+        return "{}\n{} \nloyalty years - {}\naccount number {}".format(super().__str__(), self.profession, self.loyalty_years, self.acc_number)
 
 
 # t = Customer("Gegham", "Jivanyan", 32, "Male", "AM0456778", "Programmer", 9)

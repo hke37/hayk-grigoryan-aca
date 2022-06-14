@@ -54,16 +54,16 @@ class Money:
 
 
 # TEST
-# m1 = Money('USD', 200)
+m1 = Money('USD', 200)
 # print("m1 =", m1)
 #
-# m2 = Money('EUR', 150)
+m2 = Money('EUR', 150)
 # print("m2 =", m2)
 #
 # # m3 = Money("RUB", 10000)
 #
 # # m1 + m2
-# print("m1 + m2 = ", m1 + m2)
+print("m1 + m2 = ", m1 + m2)
 #
 # # m1 - m2
 # print("m1 - m2 = ", m1 - m2)

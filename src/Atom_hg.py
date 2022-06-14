@@ -35,7 +35,7 @@ class Molecule:
         self.__list = list
 
     def __add__(self, other):
-        x = self.__list.append(other.__name)
+        x = self.__list.append(other.__list)
         return x
 
     def __str__(self):
@@ -43,13 +43,12 @@ class Molecule:
 
 ##################
 a1 = Atom("N")
+print(a1)
 m1 = Molecule(["H","H","O"])
+print(m1)
 print(m1 + a1)
 
 
-
-# print(m1)
-# print(m1.__dict__)
 
 
 

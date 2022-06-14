@@ -35,7 +35,7 @@ class Molecule:
         self.__list = list
 
     def __add__(self, other):
-        x = self.__list.append(other.__list)
+        x = self.__list.append(other.__name)
         return x
 
     def __str__(self):

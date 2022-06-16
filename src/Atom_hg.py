@@ -19,11 +19,11 @@ class Atom:
         else:
             self.__name = name
 
-    # def __add__(self, other):
-    #     x = []
-    #     x.append(self.__name)
-    #     x.append(other.__name)
-    #     return Molecule(x)
+    def __add__(self, other):
+        x = []
+        x.append(self.__name)
+        x.append(other.__name)
+        return Molecule(x)
 
     def __str__(self):
         return "Atom Name: {} ".format(self.__name)
@@ -31,15 +31,17 @@ class Atom:
 
 
 class Molecule:
+
     def __init__(self, list):
         self.__list = list
 
     def __add__(self, other):
-        x = self.__list.append(other.__name)
-        return x
+        self.__list.append(other)
+        return self.__list
 
     def __str__(self):
         return "molecule consists of {} ".format(self.__list)
+
 
 ##################
 a1 = Atom("N")

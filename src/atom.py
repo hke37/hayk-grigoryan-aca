@@ -7,7 +7,7 @@ class UnknownAtomError(Exception):
 
     def get_info(self):
         # print('class UnknownAtomError - getting')
-        return "Invalid atom name - {}\n".format(self.__value)
+        return "Invalid atom name - {}".format(self.__value)
 
 
 
@@ -16,6 +16,7 @@ class Atom:
     ATOMS = {'O': 'Oxygen', 'H': 'Hydrogen', 'N': 'Nytrogen', 'P': 'Phosphorius', 'C': 'Carbon'}
 
     def __init__(self, name):
+        self.__is_valid = False
         try:
             if name not in self.ATOMS:
                 raise UnknownAtomError(name)
@@ -24,7 +25,13 @@ class Atom:
 
         else:
             self.__name = name
+            self.__is_valid = True
         # print('Atom class - constructor')
+
+
+    @property
+    def is_valid(self):
+        return self.__is_valid
 
     @property
     def name(self):
@@ -51,10 +58,14 @@ class Atom:
 class Molecul:
 
     def __init__(self, a):
-        self.__atoms = a
-        b = self.checking_empty_atoms(self.__atoms)
-        self.__atoms = b
+        self.__atoms = self.__check_atoms(a)
 
+    def __check_atoms(self, l):
+        v = []
+        for x in l:
+            if x.is_valid:
+                v.append(x)
+        return v
 
         
     @property
@@ -64,11 +75,6 @@ class Molecul:
     @atoms.setter
     def atoms(self, b):
         self.__atoms = b
-
-
-    def checking_empty_atoms(self, x):
-        new_list = [i for i in x if i]
-        return new_list
 
 
     def __add__(self, other):
@@ -107,7 +113,7 @@ print(a1 + a2)
 a6 = Atom('K')
 print(a6)
 
-m1 = Molecul([a1, a3, a1, a2, a4, a1, a2, a5])
+m1 = Molecul([a1, a3, a1, a2, a4, a1, a2, a5, a5])
 m2 = Molecul([a2, a3, a4, a2, a2, a5])
 m3 = m1 + m2
 print(m3)
@@ -116,5 +122,5 @@ print(m4)
 m5 = m3 + m4
 print(m5)
 
-m6 = m5 + a6
+m6 = m5 + a6 + a5
 print(m6)

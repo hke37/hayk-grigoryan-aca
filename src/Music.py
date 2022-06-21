@@ -61,27 +61,21 @@ class Playlist:
 class Player:
 
     def __init__(self, pl):
-        self.__is_valid = False
         self.__playlist = pl
         self.__current_song = self.__playlist.songs[0]
         self.__status = False
-        self.__is_valid = True
 
     @property
     def playlist(self):
         return self.__playlist
 
-    @property
-    def is_valid(self):
-        return self.__is_valid
 
     def __repr__(self):
         return "{}".format(self.__status)
 
 
     def get_current_song(self):
-        if self.is_valid:
-            return self.__current_song
+        return self.__current_song
 
     def play(self):
         self.__status = True
@@ -94,14 +88,12 @@ class Player:
         return self.__status
 
     def select_song(self, x):
-        if self.is_valid:
-            self.__current_song = self.__playlist.songs[x]
+        self.__current_song = self.__playlist.songs[x]
         return self.__current_song
 
     def previous_song(self):
-        if self.is_valid:
-            a = self.__playlist.songs.index(self.__current_song) - 1
-            return self.__playlist.songs[a]
+        a = self.__playlist.songs.index(self.__current_song) - 1
+        return self.__playlist.songs[a]
 
 
 

@@ -55,7 +55,7 @@ class Money:
 
 # TEST
 m1 = Money('USD', 200)
-# print("m1 =", m1)
+print("m1 =", m1)
 #
 m2 = Money('EUR', 150)
 # print("m2 =", m2)

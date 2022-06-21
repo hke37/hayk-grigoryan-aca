@@ -6,6 +6,7 @@ class Song:
         self.__year = y
         self.__name = name
 
+
     @property
     def name(self):
         return self.__name
@@ -74,8 +75,8 @@ class Player:
     def is_valid(self):
         return self.__is_valid
 
-    def __str__(self):
-        return "{}".format(self.__playlist)
+    def __repr__(self):
+        return "{}".format(self.__status)
 
 
     def get_current_song(self):
@@ -84,11 +85,13 @@ class Player:
 
     def play(self):
         self.__status = True
-        return self.__current_song
+        print(self.__current_song)
+        return self.__status
 
     def stop(self):
         self.__status = False
-        return self.__current_song
+        print(self.__current_song)
+        return self.__status
 
     def select_song(self, x):
         if self.is_valid:
@@ -110,12 +113,12 @@ class Player:
 plist3 = Playlist([])
 plist3.load_songs()
 pl1 = Player(plist3)
-# print(pl1)
+print(pl1)
 a = pl1.get_current_song()
-b = pl1.play()
-c = pl1.stop()
 print(a)
+b = pl1.play()
 print(b)
+c = pl1.stop()
 print(c)
 d = pl1.select_song(10)
 print(d)

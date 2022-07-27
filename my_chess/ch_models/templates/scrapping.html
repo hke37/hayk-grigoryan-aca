@@ -1,0 +1,33 @@
+<h1>Rates</h1>
+
+<table border="1">
+<td><b style="color:Grey">ID</b></td>
+<td><b style="color:Orange">Բանկի անվանում</b></td>
+<td><b style="color:Red">Մասնաճյուղեր</b></td>
+<td><b style="color:MediumSeaGreen">Դոլար Առք</b></td>
+<td><b style="color:MediumSeaGreen">Դոլար Վաճառք</b></td>
+<td><b style="color:DodgerBlue">Եվրո Առք</b></td>
+<td><b style="color:DodgerBlue">Եվրո Վաճառք</b></td>
+<td><b style="color:Violet">Ռուբլի Առք</b></td>
+<td><b style="color:Violet">Ռուբլի Վաճառք</b></td>
+{% for x in allbanks %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.name }}</td>
+<td>{{ x.branch_count }}</td>
+<td>{{ x.usd_buy }}</td>
+<td>{{ x.usd_sell }}</td>
+<td>{{ x.euro_buy }}</td>
+<td>{{ x.euro_sell }}</td>
+<td>{{ x.rub_buy }}</td>
+<td>{{ x.rub_sell }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+<h1></h1>
+<a href="/api/scrapping">Update Data</a>
+
+
+

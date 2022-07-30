@@ -1,0 +1,24 @@
+<h1>Song detail</h1>
+
+<table border="1">
+
+<td><b style="color:Orange">name</b></td>
+<td><b style="color:Red">author</b></td>
+<td><b style="color:Red">album</b></td>
+<td><b style="color:Red">release_date</b></td>
+<td><b style="color:Red">about</b></td>
+<td><b style="color:Red">views</b></td>
+
+
+<tr>
+
+<td>{{ song.name }}</td>
+<td>{{ song.author }}</td>
+<td>{{ song.album }}</td>
+<td>{{ song.release_date }}</td>
+<td>{{ song.about }}</td>
+<td>{{ song.views }}</td>
+
+</tr>
+{% endfor %}
+</table>

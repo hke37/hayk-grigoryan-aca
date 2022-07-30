@@ -1,0 +1,21 @@
+<h1>All Movies</h1>
+
+<table border="1">
+<td><b style="color:Grey">ID</b></td>
+<td><b style="color:Orange">name</b></td>
+<td><b style="color:Red">director</b></td>
+
+{% for x in movie_list %}
+<tr>
+<td>{{ x.id }}</td>
+<td><a href="/best_media/movies/<name>">{{x.name}}</a></td>
+<td>{{ x.director }}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+
+
+

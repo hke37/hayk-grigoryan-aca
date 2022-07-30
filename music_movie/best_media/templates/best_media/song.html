@@ -1,0 +1,21 @@
+<h1>All Songs</h1>
+
+<table border="1">
+<td><b style="color:Grey">ID</b></td>
+<td><b style="color:Orange">name</b></td>
+<td><b style="color:Red">author</b></td>
+
+{% for x in song_list %}
+<tr>
+<td>{{x.id}}</td>
+<td><a href="/best_media/songs/<name>">{{x.name}}</a></td>
+<td>{{ x.author }}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+
+
+

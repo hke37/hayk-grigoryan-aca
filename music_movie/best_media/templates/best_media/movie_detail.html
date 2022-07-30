@@ -1,0 +1,21 @@
+<h1>Movie detail</h1>
+
+<table border="1">
+
+<td><b style="color:Orange">name</b></td>
+<td><b style="color:Red">director</b></td>
+<td><b style="color:Red">release_date</b></td>
+<td><b style="color:Red">about</b></td>
+<td><b style="color:Red">views</b></td>
+
+<tr>
+
+<td>{{ movie.name }}</td>
+<td>{{ movie.director }}</td>
+<td>{{ movie.release_date }}</td>
+<td>{{ movie.about }}</td>
+<td>{{ movie.views }}</td>
+
+</tr>
+{% endfor %}
+</table>

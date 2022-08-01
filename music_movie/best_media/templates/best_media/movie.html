@@ -2,14 +2,16 @@
 
 <table border="1">
 <td><b style="color:Grey">ID</b></td>
-<td><b style="color:Orange">name</b></td>
-<td><b style="color:Red">director</b></td>
+<td><b style="color:Orange">Name</b></td>
+<td><b style="color:Red">Director</b></td>
+<td><b style="color:Grey">Views</b></td>
 
 {% for x in movie_list %}
 <tr>
 <td>{{ x.id }}</td>
-<td><a href="/best_media/movies/<name>">{{x.name}}</a></td>
+<td><a href="/best_media/movies/{{x.name}}">{{x.name}}</a></td>
 <td>{{ x.director }}</td>
+<td>{{ x.views }}</td>
 
 </tr>
 {% endfor %}

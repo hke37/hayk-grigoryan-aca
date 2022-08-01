@@ -2,15 +2,16 @@
 
 <table border="1">
 <td><b style="color:Grey">ID</b></td>
-<td><b style="color:Orange">name</b></td>
-<td><b style="color:Red">author</b></td>
+<td><b style="color:Orange">Name</b></td>
+<td><b style="color:Red">Author</b></td>
+<td><b style="color:Red">Views</b></td>
 
 {% for x in song_list %}
 <tr>
 <td>{{x.id}}</td>
-<td><a href="/best_media/songs/<name>">{{x.name}}</a></td>
+<td><a href="/best_media/songs/{{x.name}}">{{x.name}}</a></td>
 <td>{{ x.author }}</td>
-
+<td>{{ x.views }}</td>
 </tr>
 {% endfor %}
 </table>
